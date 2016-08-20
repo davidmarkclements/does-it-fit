@@ -1,0 +1,22 @@
+does-it-fit
+
+Determine whether an HTTP endpoint's TCP response fits within minimum constraints
+
+-h              Help/Usage
+
+-a              Show all values (instead of just total size and what it fits)
+
+--constraints   Array of bytes (as quoted JSON) - index of each matches labels
+                Default: [536, 1024, 14336, 66560]
+
+--labels        Array of labels (as quoted JSON) matching byte windows, Default:
+                [ 'First TCP Segment', 'First Ethernet Packet', 
+                  'First TCP Roundtrip', 'First TCP Frame' ]
+
+--no-ssl        Don't add SSL overhead
+
+--no-gzip       Don't GZIP the body
+
+--ssl-cost      Estimated amount of bytes for SSL overhead (default: 40)
+
+--gzip-level    Compression level: 1-9. Defaults to Node's default gzip level

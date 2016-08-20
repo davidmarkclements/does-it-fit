@@ -1,0 +1,27 @@
+{
+  "name": "does-it-fit",
+  "version": "1.0.0",
+  "description": "Determine whether an HTTP endpoint's TCP response fits within minimum constraints",
+  "main": "index.js",
+  "bin": "./cli.js",
+  "scripts": {
+    "test": "standard && tap -R spec test"
+  },
+  "precommit": ["npm test"],
+  "keywords": [
+    "performance", "TCP", "TCP Segment", "TCP window", "MSS", "Ethernet packet", "TCP roundtrip"
+  ],
+  "author": "David Mark Clements",
+  "license": "MIT",
+  "dependencies": {
+    "array-find-index": "^1.0.1",
+    "minimist": "^1.2.0",
+    "size-stream": "^1.0.1",
+    "split2": "^2.1.0"
+  },
+  "devDependencies": {
+    "precommit": "^1.2.2",
+    "standard": "^8.0.0-beta.5",
+    "tap": "^6.3.2"
+  }
+}
