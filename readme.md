@@ -18,34 +18,54 @@ dif('http://google.com', function (err, answer) {
 
 ## API
 
-### require('does-it-fit') => (url, opts, cb(err, result))
+### `require('does-it-fit') => (url, opts, cb(err, result))`
 
-#### opts
+#### `opts`
 
-**constraints**: Array of bytes - index of each matches labels
-                 Default: `[536, 1024, 14336, 66560]`
+##### `constraints`
+Array of bytes - index of each matches labels
+Default: `[536, 1024, 14336, 66560]`
 
-**labels**: Array of labels matching byte windows, 
-            Default: `['First TCP Segment', 'First Ethernet Packet', 'First TCP Roundtrip', 'First TCP Frame']`
+##### `labels` 
+Array of labels matching byte windows, 
+Default: `['First TCP Segment', 'First Ethernet Packet', 'First TCP Roundtrip', 'First TCP Frame']`
 
-**ssl**:  Add SSL overhead (default: true)
+##### `ssl`
+Add SSL overhead (default: true)
 
-**gzip**: GZIP the body (default: true)
+##### `gzip` 
+GZIP the body (default: true)
 
-**sslCost**: Estimated amount of bytes for SSL overhead (default: 40)
+##### `sslCost`
+Estimated amount of bytes for SSL overhead (default: 40)
 
-**gzipLevel**: Compression level: 1-9. Defaults to Node's default gzip level
+##### `gzipLevel`
+Compression level: 1-9. Defaults to Node's default gzip level
 
 
-#### result { total, fits, headers, body, emulatedSslSize, emulateGzip, gzipLevel }
+#### `result`
 
-**total**: Total estimated bytes sent along TCP connection for endpoint
-**fits**: Relevant TCP constraint (First TCP Segment, First Ethernet Packet, First TCP Roundtrip, First TCP Frame or No target TCP constraints)
-**headers**: Size of headers
-**body**: Size of body (after gzipping, if enabled)
-**emulatedSslSize**: Estimated size of SSL overhead (as set by `sslCost`)
-**emulateGzip**: Whether GZIP was emulated (disabled with `noGzip`)
-**gzipLevel**: The compression level applied, only added if `emulateGzip` is `true`
+##### `total` 
+Total estimated bytes sent along TCP connection for endpoint
+
+##### `fits`
+Relevant TCP constraint (First TCP Segment, First Ethernet Packet, First TCP Roundtrip, First 
+TCP Frame or No target TCP constraints)
+
+##### `headers` 
+Size of headers
+
+##### `body`
+Size of body (after gzipping, if enabled)
+
+##### `emulatedSslSize`
+Estimated size of SSL overhead (as set by `sslCost`)
+
+##### `emulateGzip` 
+Whether GZIP was emulated (disabled with `noGzip`)
+
+##### `gzipLevel`
+The compression level applied, only added if `emulateGzip` is `true`
 
 ## CLI
 
@@ -85,6 +105,7 @@ npm test
 ```
 
 ## Acknowledgements
+
 * [Yoshua Wuyts](https://github.com/yoshuawuyts)
 * Sponsored by [nearForm](http://nearform.com)
 
