@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 const dif = require('./')
 const args = require('minimist')(process.argv.slice(2))
-console.log(args)
 
 if (args.h || args.help) {
   console.log(require('fs').readFileSync('./usage.txt') + '')
