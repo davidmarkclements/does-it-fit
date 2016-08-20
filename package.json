@@ -1,6 +1,6 @@
 {
   "name": "does-it-fit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Determine whether an HTTP endpoint's TCP response fits within minimum constraints",
   "main": "index.js",
   "bin": {
